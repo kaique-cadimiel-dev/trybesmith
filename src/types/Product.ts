@@ -4,3 +4,8 @@ export type Product = {
   price: string;
   userId: number;
 };
+
+export type ProductServer = {
+  status: number,
+  data: Product
+};
