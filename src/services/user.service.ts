@@ -19,6 +19,8 @@ const getAll = async ():Promise<{ status: number; data: User[] }> => {
       as: 'productIds',
       attributes: ['id'] }],
   });
+  // console.log('o que mokar: ', users[0]);
+  
   return { status: 200, data: formatProductIds(users) };
 };
 
