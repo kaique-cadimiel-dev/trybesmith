@@ -5,7 +5,12 @@ export type Product = {
   userId: number;
 };
 
-export type ProductServer = {
+export type InsertProduct = {
   status: number,
   data: Product
+};
+
+export type GetAllProduct = {
+  status: number,
+  data: Product[]
 };

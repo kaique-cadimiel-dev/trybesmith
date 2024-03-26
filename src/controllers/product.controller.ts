@@ -1,10 +1,15 @@
 import { Request, Response } from 'express';
-import insertProduct from '../services/product.service';
+import productService from '../services';
 
-const insertController = async (req: Request, res: Response):Promise<Response> => {
+const insert = async (req: Request, res: Response):Promise<Response> => {
   const product = req.body;
-  const { status, data } = await insertProduct(product);
+  const { status, data } = await productService.insert(product);
   return res.status(status).json(data);
 };
 
-export default insertController;
+const getAll = async (_req: Request, res: Response):Promise<Response> => {
+  const { status, data } = await productService.getAll();
+  return res.status(status).json(data);
+};
+
+export default { insert, getAll };

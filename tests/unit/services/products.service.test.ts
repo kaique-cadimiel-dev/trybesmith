@@ -1,7 +1,8 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
-import insert from '../../../src/services/product.service'
+// import insert from '../../../src/services/product.service'
 import ProductModel from '../../../src/database/models/product.model';
+import productService from '../../../src/services';
 
 describe('ProductsService', function () {
   beforeEach(function () { sinon.restore(); });
@@ -15,7 +16,7 @@ describe('ProductsService', function () {
     const productMock = ProductModel.build({...product, id: 1}); 
     sinon.stub(ProductModel, 'create').resolves(productMock);
     // act
-    const {status, data} = await insert(product);
+    const {status, data} = await productService.insert(product);
     // assert
     expect(status).to.be.equal(201);
     expect(data).to.be.equal(productMock);
