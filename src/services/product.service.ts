@@ -1,6 +1,6 @@
 import { Optional } from 'sequelize';
-import { Product, ProductServer } from '../../types/Product';
-import ProductModel from '../models/product.model';
+import { Product, ProductServer } from '../types/Product';
+import ProductModel from '../database/models/product.model';
 
 const insert = async (product: Optional<Product, 'id'>):Promise<ProductServer> => {
   const productCreated = await ProductModel.create(product);
