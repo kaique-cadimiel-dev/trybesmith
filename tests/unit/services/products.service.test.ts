@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 import ProductModel from '../../../src/database/models/product.model';
-import productService from '../../../src/services';
+import { productService } from '../../../src/services';
 
 describe('ProductsService', function () {
   beforeEach(function () { sinon.restore(); });

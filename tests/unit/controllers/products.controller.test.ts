@@ -2,9 +2,9 @@ import chai, { expect } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import { Request, Response } from 'express';
-import productControler from '../../../src/controllers';
+import { productController } from '../../../src/controllers';
 import ProductModel from '../../../src/database/models/product.model';
-import productService from '../../../src/services';
+import { productService } from '../../../src/services';
 
 chai.use(sinonChai);
 
@@ -28,7 +28,7 @@ describe('ProductsController', function () {
     // act
     const productMock = ProductModel.build({...product, id: 1}); 
     sinon.stub(ProductModel, 'create').resolves(productMock);
-    await productControler.insert(req, res);
+    await productController.insert(req, res);
     // assert
     expect(res.status).to.have.calledWith(201);
     expect(res.json).to.have.calledWith(productMock);
@@ -55,7 +55,7 @@ describe('ProductsController', function () {
     res.json = sinon.stub().returns(products);
     sinon.stub(productService, 'getAll').resolves({status: 200, data: products})
     // act
-    await productControler.getAll(req, res);
+    await productController.getAll(req, res);
     // assert
     expect(res.status).to.have.calledWith(200);
     expect(res.json).to.have.calledWith(products);
