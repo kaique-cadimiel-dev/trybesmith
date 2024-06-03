@@ -7,7 +7,7 @@ export type Product = {
 
 export type InsertProduct = {
   status: number,
-  data: Product
+  data: Product | { message: string }
 };
 
 export type GetAllProduct = {
