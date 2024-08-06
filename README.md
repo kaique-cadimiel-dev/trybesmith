@@ -1,10 +1,20 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# project trybesmith
+## 1º clone
+```git
+git@github.com:kaique-cadimiel-dev/trybesmith.git
+```
+
+## 2º instalar dependências
+
+```
+npm i
+```
+## 3º rodar docker-compose
+
+```
+docker-compose up -d --build
+```
+<h2>Descrição</h2>
+<p>Trybesmith é uma loja que concepciona artigos medievais únicos para colecionadores. O objetivo do projeto é, através de tecnologia e regras de negócios, entregar uma solução tech, segura e eficaz.</p>
+<p>Meu papel foi construir uma API que suprisse a necessidade da loja, foi utilizado Typescript como linguagem, Sequelize como ORM e MySQL como banco de dados.</p>
+<p>Foi aplicado o conceito de arquitetura em camadas, visando escalabilidade e praticidade em manutenção.</p>
